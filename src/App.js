@@ -16,4 +16,7 @@ const [searct, setSearct] = useState('');
 		);
 	}
 
+
 	export default App;
+
+
