@@ -1,27 +1,21 @@
 import React from "react";
 
-export default function Sidebar() {
-  return(
-  <aside>
+export default function Sidebar({ topAnime }) {
+  return (
+    <aside>
       <nav>
-          <h3>Top-Anime</h3>
-          <a href="#"
+        <h3>Top-Anime</h3>
+        {topAnime.map(anime => {
+          return <a
+            href={anime.url}
             target="_blank"
-            rel="noreferrer">
-            Attack On Titan
+            key={anime.mal_id}
+            rel="noreferrer"
+          >
+            {anime.title}
           </a>
-
-          <a href="#"
-            target="_blank"
-            rel="noreferrer">
-            One Punch Man
-          </a>
-
-          <a href="#"
-            target="_blank"
-            rel="noreferrer">
-            Sword Art Online
-          </a>
+        })}
       </nav>
-  </aside>);
+    </aside>
+  );
 }
