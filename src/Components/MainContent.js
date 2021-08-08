@@ -1,5 +1,7 @@
 import React from "react";
 //  import '../assets/scss/main.scss'
+import AnimeCard from "./AnimeCard";
+
 function MainContent(props) {
   return (
     <main>
