@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
-
 import MainContent from "./Components/MainContent";
+
 function App() {
   const [animeList, setAnimeList] = useState([]);
   const [topAnime, setTopAnime] = useState([]);
   const [searct, setSearct] = useState("");
+  
   const GetTopAnime = async () => {
     const temp = await fetch(
       `https://api.jikan.moe/v3/top/anime/1/bypopularity`
@@ -16,9 +17,10 @@ function App() {
   };
 
   useEffect(() => {
+  
     GetTopAnime();
   }, []);
-  console.log(topAnime);
+//console.log(topAnime);
 
   return (
     <div className="App">
