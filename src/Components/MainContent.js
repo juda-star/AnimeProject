@@ -1,5 +1,6 @@
 import React from "react";
 //  import '../assets/scss/main.scss'
+import AnimeCard from "./AnimeCard";
 function MainContent() {
   return (
     <main>
