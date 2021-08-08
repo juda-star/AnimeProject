@@ -8,18 +8,19 @@ function App() {
   const [topAnime, setTopAnime] = useState([]);
   const [searct, setSearct] = useState("");
   
-  const GetTopAnime=async()=>{
-	  const temp = await fetch('https://api.jikan.moe/v3/top/anime/1/bypopularity')
-    
-	  .then(res=>res.json());
+  const GetTopAnime = async () => {
+    const temp = await fetch(
+      `https://api.jikan.moe/v3/top/anime/1/bypopularity`
+    ).then((res) => res.json());
 
-	  setTopAnime(temp.top.slice(0,5));
-  }
+    setTopAnime(temp.top.slice(0, 5));
+  };
 
   useEffect(() => {
-	GetTopAnime();
+  
+    GetTopAnime();
   }, []);
-  // console.log(topAnime);
+//console.log(topAnime);
 
   return (
     <div className="App">
@@ -31,6 +32,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
