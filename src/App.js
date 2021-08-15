@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
 import MainContent from "./Components/MainContent";
-import AnimeCard from "./Components/AnimeCard"
+
 function App() {
   const [animeList, setAnimeList] = useState([]);
   const [topAnime, setTopAnime] = useState([]);
@@ -12,24 +12,35 @@ function App() {
     const temp = await fetch(
       `https://api.jikan.moe/v3/top/anime/1/bypopularity`
     ).then((res) => res.json());
-
-    setTopAnime(temp.top.slice(0, 5));
+    return setTopAnime(temp.top.slice(0, 50));
   };
+
+  useEffect(() => {
+    GetTopAnime();
+    FeatchAnime(search);
+  }, []);
+
   const HandleSearch = (e) => {
-    e.preventDefalut();
-    console.log(search);
+    e.preventDefault();
+    // preventDefault
+    FeatchAnime(search);
   };
 
   const FeatchAnime = async (query) => {
-    const temp = await fetch(
-      `https://api.jikan.moe/v3/search/anime?q=${query}&order_by=title&sort=asc&limit=10`
-    ).then((res) => res.json());
-    setAnimeList(temp.results);
+    if (query === "") {
+      const temp = await fetch(
+        `https://api.jikan.moe/v3/search/anime?q=onepiece&order_by=title&sort=asc&limit=1000`
+      ).then((res) => res.json());
+      console.log(temp);
+      return setAnimeList(temp.results.slice(0, 30));
+    } else {
+      const temp = await fetch(
+        `https://api.jikan.moe/v3/search/anime?q=${query}&order_by=title&sort=asc&limit=1000`
+      ).then((res) => res.json());
+      console.log(temp);
+      return setAnimeList(temp.results.slice(0, 50));
+    }
   };
-  useEffect(() => {
-    GetTopAnime();
-  }, []);
-  //console.log(topAnime);
 
   return (
     <div className="App">
