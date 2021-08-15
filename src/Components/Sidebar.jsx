@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Sidebar({ topAnime }) {
-  console.log(topAnime);
+
   return (
     <aside>
       <nav>
@@ -20,3 +20,5 @@ export default function Sidebar({ topAnime }) {
     </aside>
   );
 }
+/////////////////////////////new////////////////////////////
+
