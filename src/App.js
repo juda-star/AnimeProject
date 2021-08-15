@@ -2,16 +2,16 @@ import { useState, useEffect } from "react";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
 import MainContent from "./Components/MainContent";
-import axios from "axios";
+
 function App() {
   const [animeList, setAnimeList] = useState([]);
   const [topAnime, setTopAnime] = useState([]);
   const [search, setSearch] = useState("");
 
   const GetTopAnime = async () => {
-    const temp = await fetch(`https://api.jikan.moe/v3/top/anime/1/bypopularity`)
-      .then((res) => res.json());
-
+    const temp = await fetch(
+      `https://api.jikan.moe/v3/top/anime/1/bypopularity`
+    ).then((res) => res.json());
     return setTopAnime(temp.top.slice(0, 10));
   };
 
@@ -21,8 +21,8 @@ function App() {
   }, []);
 
   const HandleSearch = (e) => {
-    e.preventDefalut();
-
+    e.preventDefault();
+    // preventDefault
     FeatchAnime(search);
   };
 
@@ -51,5 +51,3 @@ function App() {
 }
 
 export default App;
-
-/////////////////////////////new////////////////////////////////
