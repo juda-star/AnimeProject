@@ -20,5 +20,3 @@ export default function Sidebar({ topAnime }) {
     </aside>
   );
 }
-/////////////////////////////new////////////////////////////
-
