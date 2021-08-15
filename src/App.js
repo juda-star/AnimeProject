@@ -3,7 +3,6 @@ import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
 import MainContent from "./Components/MainContent";
 import axios from "axios";
-// import AnimeCard from "./Components/AnimeCard";
 function App() {
   const [animeList, setAnimeList] = useState([]);
   const [topAnime, setTopAnime] = useState([]);
