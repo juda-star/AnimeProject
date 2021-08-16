@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
 import MainContent from "./Components/MainContent";
-import AnimeCard from "./Components/AnimeCard"
+
 function App() {
   const [animeList, setAnimeList] = useState([]);
   const [topAnime, setTopAnime] = useState([]);
@@ -17,7 +17,7 @@ function App() {
   };
   const HandleSearch = (e) => {
     e.preventDefalut();
-    console.log(search);
+    FeatchAnime(search);
   };
 
   const FeatchAnime = async (query) => {

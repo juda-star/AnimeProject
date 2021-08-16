@@ -10,7 +10,7 @@ function AnimeCard({anime}) {
                <figure>
                    <img 
                    src={anime.image_url} 
-                   alt="Anime Image"/>
+                   alt="Anime"/>
                </figure>
                <h3>{anime.title}</h3>
            </a>
