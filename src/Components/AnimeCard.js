@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 function AnimeCard({anime}) {
     return (
@@ -18,4 +18,4 @@ function AnimeCard({anime}) {
     )
 }
 
-export default AnimeCard
+export default AnimeCard;
