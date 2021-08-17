@@ -29,13 +29,13 @@ function App() {
   const FeatchAnime = async (query) => {
     if (query === "") {
       const temp = await fetch(
-        `https://api.jikan.moe/v3/search/anime?q=onepiece&order_by=title&sort=asc&limit=1000`
+        `https://api.jikan.moe/v3/search/anime?q=onepiece,naruto,dragonball,demonslayer,bleach,tokyogoul,onepunchmen&order_by=title&sort=asc`
       ).then((res) => res.json());
       console.log(temp);
-      return setAnimeList(temp.results.slice(0, 30));
+      return setAnimeList(temp.results.slice(0, 48));
     } else {
       const temp = await fetch(
-        `https://api.jikan.moe/v3/search/anime?q=${query}&order_by=title&sort=asc&limit=1000`
+        `https://api.jikan.moe/v3/search/anime?q=${query}&order_by=title&sort=asc`
       ).then((res) => res.json());
       console.log(temp);
       return setAnimeList(temp.results.slice(0, 50));
