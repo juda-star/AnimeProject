@@ -12,7 +12,7 @@ function App() {
     const temp = await fetch(
       `https://api.jikan.moe/v3/top/anime/1/bypopularity`
     ).then((res) => res.json());
-    return setTopAnime(temp.top.slice(0, 50));
+    return setTopAnime(temp.top.slice(0, 47));
   };
 
   useEffect(() => {
@@ -32,7 +32,7 @@ function App() {
         `https://api.jikan.moe/v3/search/anime?q=onepiece,naruto,dragonball,demonslayer,bleach,tokyogoul,onepunchmen&order_by=title&sort=asc`
       ).then((res) => res.json());
       console.log(temp);
-      return setAnimeList(temp.results.slice(0, 48));
+      return setAnimeList(temp.results.slice(0, 18));
     } else {
       const temp = await fetch(
         `https://api.jikan.moe/v3/search/anime?q=${query}&order_by=title&sort=asc`
