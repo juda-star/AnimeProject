@@ -21,12 +21,8 @@ function App() {
   }, []);
 
   const HandleSearch = (e) => {
-<<<<<<< HEAD
-    e.preventDefalut();
-=======
     e.preventDefault();
     // preventDefault
->>>>>>> main
     FeatchAnime(search);
   };
 
